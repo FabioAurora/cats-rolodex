@@ -1,0 +1,32 @@
+:root {
+  --card-bg-color: rgb(51, 65, 85);
+  --email-clr: rgb(102, 108, 119);
+  --sub-title-clr: #94a3b8;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: var(--card-bg-color);
+  border-radius: 5px;
+  padding: 25px;
+  cursor: pointer;
+  -moz-osx-font-smoothing: grayscale;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  transition: transform .25s ease-out;
+  
+}
+
+.card-container:hover {
+  transform: scale(1.05);
+}
+
+h2 {
+  color: var(--sub-title-clr);
+}
+
+p {
+  color: var(--email-clr);
+}
