@@ -1,15 +1,18 @@
 import { Component } from "react";
 
+import Card from "../card/card.component";
 import './data-list.styles.css';
 
 export default class DataList extends Component {
   render() {
     const { cats } = this.props;
     return (
-      <div>
+      <div className="card-list">
         {
           cats.map(cat => {
-            return <h1 key={cat.id}>{cat.name}</h1>
+            return ( 
+            <Card cat={cat}/>
+            )
           })
         }
       </div>
