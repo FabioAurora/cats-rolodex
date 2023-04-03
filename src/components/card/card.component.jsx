@@ -1,5 +1,5 @@
 import { Component } from "react";
-
+import './card.styles.css';
 export default class Card extends Component {
   render() {
     const {name, id, email} = this.props.cat;
