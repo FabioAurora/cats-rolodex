@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import { useState } from 'react'; // this is a hook
 
 import SearchBox from './components/search-box/search-box.component';
 
@@ -6,7 +6,31 @@ import DataList from './components/data-list/data-list.component';
 
 import './App.css';
 
-export default class App extends Component {
+const App = () => {
+  const [searchField, setSearchField] = useState(''); // useState give us back an array of 2 values [value, setValue]
+  
+  
+  const onSearchChange = event => {
+    const searchFieldString = event.target.value.toLocaleLowerCase()
+    setSearchField(searchFieldString)
+  }
+
+  return (
+    <div className="App">
+        <h1 className="app-title">Cats Rolodex</h1>
+        
+        <SearchBox 
+        className= 'cats-search-box' 
+        placeholder= 'cat search' 
+        onChangeHandler={onSearchChange}/>
+
+        {/* 
+        <DataList cats={filteredCats}/> */}
+      </div>
+  )
+}
+
+/* export default class App extends Component {
   constructor() {
     super();
 
@@ -26,12 +50,7 @@ export default class App extends Component {
       ))
   }
 
-  onSearchChange = event => {
-    const searchField = event.target.value.toLocaleLowerCase()
-    this.setState(() => {
-      return { searchField };
-    })
-  }
+  
 
   render() {
     const { cats, searchField } = this.state;
@@ -52,4 +71,6 @@ export default class App extends Component {
       </div>
     );
   }
-}
+} */
+
+export default App;
