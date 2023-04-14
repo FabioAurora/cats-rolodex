@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'; // this is a hook
 
 import SearchBox from './components/search-box/search-box.component';
 
-import DataList from './components/data-list/data-list.component';
+import CardList from './components/card-list/card-list.component';
 
 import './App.css';
 
@@ -42,7 +42,7 @@ const App = () => {
         placeholder= 'cat search' 
         onChangeHandler={onSearchChange}/>
 
-        <DataList cats={filteredCats}/>
+        <CardList cats={filteredCats}/>
       </div>
   )
 }

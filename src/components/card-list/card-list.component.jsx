@@ -1,12 +1,9 @@
-import { Component } from "react";
+
 
 import Card from "../card/card.component";
-import './data-list.styles.css';
+import './card-list.styles.css';
 
-export default class DataList extends Component {
-  render() {
-    const { cats } = this.props;
-    return (
+const CardList = ({cats}) => (
       <div className="card-list">
         {
           cats.map(cat => {
@@ -17,5 +14,5 @@ export default class DataList extends Component {
         }
       </div>
     )
-  }
-}
+
+export default CardList
